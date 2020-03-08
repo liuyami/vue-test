@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ msg }}
+        <div v-html="template"></div>
+        <div><a :href="url">百度</a></div>
+
+        <div> 计数器： {{ count }}</div>
+
+        <div><button @click="submit">加一</button></div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el:'#app',
+            data: {
+                msg: 'hello Vue.',
+                count: 0,
+                template: '<strong>Hello Vue</strong>',
+                url:'http://baidu.com'
+            },
+            methods: {
+                submit:  function (){
+                    this.count++;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
